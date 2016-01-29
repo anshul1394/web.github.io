@@ -1,0 +1,50 @@
+<html lang="en" ng-app="StarterApp">
+<head>
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body ng-controller="AppCtrl as vm">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.1/ui-bootstrap-tpls.min.js"></script>
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-touch.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript" >    
+  </script>
+ 
+  <md-toolbar layout="row" layout-align="space-between center">
+   
+    <span><h2 class="md-toolbar-tools">Heading</h2></span>
+    <span>
+    <md-button arai-label="home">Home</md-button>
+      <md-button arai-label="home">Speak up</md-button>
+      <md-button arai-label="home">Buy</md-button>
+      <md-button arai-label="home">Store</md-button>
+      </md-toolbar>
+    </span>
+  </md-toolbar>
+   <md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}" class="md-primary" ></md-progress-linear>
+<div class="container slides" id="slider_cont">
+  <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage" ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()" ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
+  <a class="arrow next" href="#" ng-click="nextSlide()"></a>
+  <a class="arrow prev" href="#" ng-click="prevSlide()"></a>
+ <nav class="nav">
+   <div class="wrapper">
+     <ul class="dots">
+       <li class="dot" ng-repeat="slide in slides">
+         <a href='#' ng-class="{'active':isCurrentSlideIndex($index)}" ng-click="setCurrentSlideIndex($index)"></a></li>
+     </ul>
+   </div>
+  </nav>
+
+ </div>    
+</body>
+</html>
